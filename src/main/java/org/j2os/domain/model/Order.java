@@ -1,7 +1,16 @@
 package org.j2os.domain.model;
 
-public record Order(
-        String orderId,
-        String product,
-        int quantity
-) {}
+
+import lombok.*;
+import org.j2os.domain.enums.OrderStatus;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Order {
+    private String orderId;
+    private String product;
+    private int quantity;
+    private OrderStatus status;
+}

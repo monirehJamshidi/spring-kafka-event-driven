@@ -8,9 +8,12 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaConfig {
 
+    // =============================
+    // Topic
+    // =============================
     @Bean
     public NewTopic orderTopic(){
-        return TopicBuilder.name("orders")
+        return TopicBuilder.name("order-topic")
                 .partitions(3)
                 .replicas(1)
                 .build();
@@ -22,4 +25,5 @@ public class KafkaConfig {
                     .replicas(1)
                     .build();
     }
+
 }
