@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 public class PaymentService {
 
     public void processPayment(OrderEvent event){
+
+        if (Math.random() > 0.5){
+            throw new RuntimeException("Payment gateway failed");
+        }
+
         log.info("Processing payment for order: " + event.getOrderId());
 
         // business logic
